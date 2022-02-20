@@ -135,6 +135,62 @@ public class PokemonController {
     Retorna uma lista de pokemons que possuem o atributo forca com o valor abaixo ou igual de 3.000;
 
      */
+    @GetMapping("/{tipo}/contagem")
+    public Integer contagem(@PathVariable String tipo){
+
+        Integer cont = 0;
+
+        for(Pokemon pokemon : listaPokemons){
+
+            if(pokemon.getTipo().equals(tipo)){
+                cont++;
+            }
+        }
+
+        return cont;
+    }
+
+    @GetMapping("/capturados")
+    public void capturados(){
+
+        System.out.println("Lista de Pokemons capturados: \n");
+
+        for(Pokemon pokemon : listaPokemons){
+
+            if(pokemon.getCapturado() == true){
+
+                System.out.println(pokemon);
+            }
+        }
+    }
+
+    @GetMapping("/fortes")
+    public void fortes(){
+
+        System.out.println("Lista de Pokemons fortes: \n");
+
+        for(Pokemon pokemon : listaPokemons){
+
+            if(pokemon.getForca() > 3000){
+
+                System.out.println(pokemon);
+            }
+        }
+    }
+
+    @GetMapping("/fracos")
+    public void fracos(){
+
+        System.out.println("Lista de Pokemons fracos: \n");
+
+        for(Pokemon pokemon : listaPokemons){
+
+            if(pokemon.getForca() <= 3000){
+
+                System.out.println(pokemon);
+            }
+        }
+    }
 
 }
 

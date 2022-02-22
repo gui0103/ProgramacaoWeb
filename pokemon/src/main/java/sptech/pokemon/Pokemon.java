@@ -1,4 +1,4 @@
-/*
+package sptech.pokemon;/*
 
 Crie uma classe para gerenciar os dados dos pokemons, com as seguintes características:
 

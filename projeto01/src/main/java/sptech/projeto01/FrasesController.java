@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class FrasesController {
 
-    // localhost: 8080/cumprimentar
+    // localhost:8080/cumprimentar
     @GetMapping("/cumprimentar")
     public String cumprimentar() {
         return "é noizzzz no REST";

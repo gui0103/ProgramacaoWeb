@@ -7,6 +7,7 @@ import sptech.project04.entidade.Heroi;
 import java.util.ArrayList;
 import java.util.List;
 
+    // https://
 
     @RestController
     @RequestMapping("/herois")
@@ -46,6 +47,20 @@ import java.util.List;
             }
 
             return mensagem;
+
+        }
+
+        @GetMapping("objeto/{indice}")
+        public Heroi getHeroiObjeto(@PathVariable int indice){
+
+            if (indice >= herois.size()) {
+
+                return null;
+
+            }
+            Heroi heroiSendoBuscado = herois.get(indice);
+
+            return heroiSendoBuscado;
 
         }
 

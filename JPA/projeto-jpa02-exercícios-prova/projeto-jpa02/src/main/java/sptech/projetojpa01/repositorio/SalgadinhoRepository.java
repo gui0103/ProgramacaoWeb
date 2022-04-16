@@ -33,4 +33,10 @@ public interface SalgadinhoRepository
   void atualizarPrecoApimentado(Integer codigo, Double preco, Boolean apimentado);
 
   List<Salgadinho> findByApimentadoTrue();
+
+  int countByApimentadoFalse();
+
+  List<Salgadinho> findByNivelSalLessThan(Integer nivelSal);
+
+  List<Salgadinho> findByPrecoGreaterThanEqual(Double preco);
 }

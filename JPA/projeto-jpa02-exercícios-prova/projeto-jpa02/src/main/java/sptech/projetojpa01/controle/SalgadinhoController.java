@@ -273,4 +273,20 @@ public class SalgadinhoController {
 
     // g) A API deve ter uma documentação swagger acessível em http://localhost:8080/swagger-ui/index.html
 
+    // h) Crie o EndPoint GET /filtro-preco/{preco1}/{preco2} ->
+    // retorna uma lista de todos cujo preco está entre {preco1} e {preco2}
+    @GetMapping("/filtro-preco/{preco1}/{preco2}")
+    public ResponseEntity<List<Salgadinho>> getFiltroPreco
+    (@PathVariable Double preco1, @PathVariable Double preco2) {
+
+        return ResponseEntity.status(200).body(repository.findByPrecoBetween(preco1, preco2));
+    }
+
+    // i) Crie o EndPoint GET /filtro-nome/{nome} ->
+    // retorna uma lista de todos cujo nome contém as letras enviadas em {nome}
+    @GetMapping("/filtro-nome/{nome}")
+    public ResponseEntity<List<Salgadinho>> getFiltroNome(@PathVariable String nome) {
+
+        return ResponseEntity.status(200).body(repository.findByNomeContains(nome));
+    }
 }

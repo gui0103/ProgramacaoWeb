@@ -39,4 +39,8 @@ public interface SalgadinhoRepository
   List<Salgadinho> findByNivelSalLessThan(Integer nivelSal);
 
   List<Salgadinho> findByPrecoGreaterThanEqual(Double preco);
+
+  List<Salgadinho> findByPrecoBetween(Double preco1, Double preco2);
+
+  List<Salgadinho> findByNomeContains(String nome);
 }
